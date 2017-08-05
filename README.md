@@ -18,7 +18,7 @@ It provides a way of wrapping a mix of public and private methods and variables,
 
 Modules should be Immediately-Invoked-Function-Expressions (IIFE) to allow for private scopes - that is, a closure that protect variables and methods (however, it will return an object instead of a function). This is what it looks like:
 
-`(function() {
+```(function() {
 
     // declare private variables and/or functions
 
@@ -27,11 +27,11 @@ Modules should be Immediately-Invoked-Function-Expressions (IIFE) to allow for p
     }
 
 })();
-`
+```
 
 Here we instantiate the private variables and/or functions before returning our object that we want to return. Code outside of our closure is unable to access these private variables since it is not in the same scope. Let's see another example - 
 
-`var testModule = (function () {
+```var testModule = (function () {
  
   var counter = 0;
  
@@ -56,11 +56,11 @@ testModule.incrementCounter();
  
 // Check the counter value and reset
 // Outputs: counter value prior to reset: 1
-testModule.resetCounter();`
+testModule.resetCounter();```
 
 Looking at another example, below we can see a shopping basket implemented using this pattern. The module itself is completely self-contained in a global variable called basketModule. The basket array in the module is kept private and so other parts of our application are unable to directly read it. It only exists with the module's closure and so the only methods able to access it are those with access to its scope (i.e. addItem(), getItemCount() etc) -
 
-`var basketModule = (function () {
+```var basketModule = (function () {
  
   // privates
  
@@ -103,11 +103,11 @@ Looking at another example, below we can see a shopping basket implemented using
       return p;
     }
   };
-})();`
+})();```
 
 This is how we would use this - 
 
-`// basketModule returns an object with a public API we can use
+```// basketModule returns an object with a public API we can use
  
 basketModule.addItem({
   item: "bread",
@@ -134,7 +134,7 @@ console.log( basketModule.basket );
  
 // This also won't work as it only exists within the scope of our
 // basketModule closure, but not in the returned public object
-console.log( basket );`
+console.log( basket );```
 
 
 	
