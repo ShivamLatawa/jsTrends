@@ -235,7 +235,6 @@ Car.prototype.toString = function () {
   return this.model + " has done " + this.miles + " miles";
 };
 
-
 ```
 
 
