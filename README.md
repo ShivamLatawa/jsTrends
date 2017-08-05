@@ -284,6 +284,7 @@ var printer = (function () {
 Usage
 
 ```
+
 var officePrinter = printer.getInstance();
 
 ```
