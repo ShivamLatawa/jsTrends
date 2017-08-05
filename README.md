@@ -9,7 +9,7 @@ Patterns are a better way to write maintainable, readable and reusable code. Cod
 
 Now we know that there are certain patterns that are used in JS, but we still not know WHEN, WHY & HOW of the patterns. Like when a certain pattern should be used, why should we use it and how the implementation will look like. Lets go over each of the patterns mentioned above - 
 
-## 1. Modular Pattern - 
+## 1. Modular Pattern
 JS modules are the most prevalent used design patterns for keeping particular pieces of code independent of each other. This provides loose coupling to support well structured code.
 
 If you are familiar with OOPS, modules are similar to JS classes. One of the advantages of the classes is encapsulation - protecting state and behaviour from being accessed from other classes. 
@@ -150,7 +150,7 @@ console.log( basket );
 ```
 
 
-## 2. Revealing Modular Pattern - 
+## 2. Revealing Modular Pattern
 
 The Revealing Module pattern came about as Heilmann was frustrated with the fact that he had to repeat the name of the main object when we wanted to call one public method from another or access public variables.  He also disliked the Module pattern’s requirement for having to switch to object literal notation for the things he wished to make public.
 
@@ -191,7 +191,7 @@ myRevealingModule.setName( "jsTrends" );
 
 ```
 
-## 3. Constructor Pattern - 	
+## 3. Constructor Pattern	
 
 In classical object-oriented programming languages, a constructor is a special method used to initialize a newly created object once memory has been allocated for it. In JavaScript, as almost everything is an object, we're most often interested in object constructors.
 
@@ -224,9 +224,9 @@ console.log( mondeo.toString() );
 
 ```
 
-Constructor wit Prototype - 
+Constructor with Prototype - 
 
-```
+
 In above example just replace the toString method with the following method - 
 
 ```
@@ -235,4 +235,59 @@ Car.prototype.toString = function () {
   return this.model + " has done " + this.miles + " miles";
 };
 
+
 ```
+
+
+## 4. Singleton Pattern
+
+The Singleton pattern is thus known because it restricts instantiation of a class to a single object. Classically, the Singleton pattern can be implemented by creating a class with a method that creates a new instance of the class if one doesn't exist. In the event of an instance already existing, it simply returns a reference to that object.
+
+An example of Singleton usage is use of an office printer. If there are ten people in an office, and they all use one printer, ten computers share one printer (instance). By sharing one printer, they share the same resources.
+
+```
+
+var printer = (function () {
+
+  var printerInstance;
+
+  function create () {
+
+    function print() {
+      // underlying printer mechanics
+    }
+
+    function turnOn() {
+      // warm up
+      // check for paper
+    }
+
+    return {
+      // public + private states and behaviors
+      print: print,
+      turnOn: turnOn
+    };
+  }
+
+  return {
+    getInstance: function() {
+      if(!printerInstance) {
+        printerInstance = create();
+      }
+      return printerInstance;
+    }
+  };
+
+})();
+
+```
+
+Usage
+
+```
+var officePrinter = printer.getInstance();
+
+```
+
+In AngularJS, Singletons are prevalent, the most notable being services, factories, and providers. Since they maintain state and provides resource accessing, creating two instances defeats the point of a shared service/factory/provider.
+
