@@ -150,4 +150,45 @@ console.log( basket );
 ```
 
 
+## 2. Revealing Modular Pattern - 
+
+The Revealing Module pattern came about as Heilmann was frustrated with the fact that he had to repeat the name of the main object when we wanted to call one public method from another or access public variables.  He also disliked the Module pattern’s requirement for having to switch to object literal notation for the things he wished to make public.
+
+An example of how to use the Revealing Module pattern can be found below:
+
+```
+
+var myRevealingModule = (function () {
+ 
+        var privateVar = "some random channel, please change the name! :(",
+            publicVar = "Hey there!";
+ 
+        function privateFunction() {
+            console.log( "Youtube channel:" + privateVar );
+        }
+ 
+        function publicSetName( strName ) {
+            privateVar = strName;
+        }
+ 
+        function publicGetName() {
+            privateFunction();
+        }
+ 
+ 
+        // Reveal public pointers to
+        // private functions and properties
+ 
+        return {
+            setName: publicSetName,
+            greeting: publicVar,
+            getName: publicGetName
+        };
+ 
+    })();
+ 
+myRevealingModule.setName( "jsTrends" );
+
+```
+
 	
