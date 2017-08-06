@@ -7,7 +7,7 @@ Patterns are a better way to write maintainable, readable and reusable code. Cod
 * Singleton
 * Factory
 
-Now we know that there are certain patterns that are used in JS, but we still not know WHEN, WHY & HOW of the patterns. Like when a certain pattern should be used, why should we use it and how the implementation will look like. Lets go over each of the patterns mentioned above - 
+Now we know that there are certain patterns that are used in JS, but we still not know WHEN, WHY & HOW of the patterns. Like when a certain pattern should be used, why should we use it and how the implementation will look like. Lets go over each of the patterns mentioned above.
 
 ## 1. Modular Pattern
 JS modules are the most prevalent used design patterns for keeping particular pieces of code independent of each other. This provides loose coupling to support well structured code.
@@ -160,7 +160,7 @@ An example of how to use the Revealing Module pattern can be found below:
 
 var myRevealingModule = (function () {
  
-        var privateVar = "some random channel, please change the name! :(",
+        var privateVar = "some random channel",
             publicVar = "Hey there!";
  
         function privateFunction() {
@@ -186,8 +186,10 @@ var myRevealingModule = (function () {
         };
  
     })();
- 
+
+myRevealingModule.getName(); // Output: "Youtube channel: some random channel"
 myRevealingModule.setName( "jsTrends" );
+myRevealingModule.getName(); // Output: "Youtube channel: jsTrends"
 
 ```
 
@@ -213,18 +215,18 @@ function Car( model, year, miles ) {
 // Usage:
  
 // We can create new instances of the car
-var civic = new Car( "Honda Civic", 2009, 20000 );
-var mondeo = new Car( "Ford Mondeo", 2010, 5000 );
+var jazz = new Car( "Honda Jazz", 2017, 500 );
+var city = new Car( "Honda City", 2013, 20000 );
  
 // and then open our browser console to view the
 // output of the toString() method being called on
 // these objects
-console.log( civic.toString() );
-console.log( mondeo.toString() );
+console.log( jazz.toString() );
+console.log( city.toString() );
 
 ```
 
-Constructor with Prototype - 
+### Constructor with Prototype:
 
 
 In above example just replace the toString method with the following method - 
@@ -240,7 +242,7 @@ Car.prototype.toString = function () {
 
 ## 4. Singleton Pattern
 
-The Singleton pattern is thus known because it restricts instantiation of a class to a single object. Classically, the Singleton pattern can be implemented by creating a class with a method that creates a new instance of the class if one doesn't exist. In the event of an instance already existing, it simply returns a reference to that object.
+The Singleton pattern is known because it restricts instantiation of a class to a single object. Classically, the Singleton pattern can be implemented by creating a class with a method that creates a new instance of the class if one doesn't exist. In the event of an instance already existing, it simply returns a reference to that object.
 
 An example of Singleton usage is use of an office printer. If there are ten people in an office, and they all use one printer, ten computers share one printer (instance). By sharing one printer, they share the same resources.
 
