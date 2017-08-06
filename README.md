@@ -390,10 +390,10 @@ console.log( movingTruck );
 
 ```
 
-When To Use The Factory Pattern
+### When To Use The Factory Pattern
 
 The Factory pattern can be especially useful when applied to the following situations:
 
-When our object or component setup involves a high level of complexity.
-When we need to easily generate different instances of objects depending on the environment we are in.
+* When our object or component setup involves a high level of complexity.
+* When we need to easily generate different instances of objects depending on the environment we are in.
 
