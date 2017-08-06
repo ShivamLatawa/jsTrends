@@ -1,1 +1,1 @@
-This project will have all the documents related to the talks that we'll post on the channel jsTrends.
+### This project will have all the documents related to the talks that we'll post on the channel jsTrends.
