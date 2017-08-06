@@ -397,3 +397,16 @@ The Factory pattern can be especially useful when applied to the following situa
 * When our object or component setup involves a high level of complexity.
 * When we need to easily generate different instances of objects depending on the environment we are in.
 
+
+## Conclusions
+
+It's important for us to be aware of these patterns but it's also essential to know how and when to use them. Study the pros and cons of each pattern before employing them. Take the time out to experiment with patterns to fully appreciate what they offer and make usage judgements based on a pattern's true value to your application.
+
+
+### References
+
+1. [Learning JavaScript Design Patterns - Addy Osmani](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
+2. https://toddmotto.com/mastering-the-module-pattern/
+3. https://scotch.io/bar-talk/4-javascript-design-patterns-you-should-know#toc-singleton
+ 
+
